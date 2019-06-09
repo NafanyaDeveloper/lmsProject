@@ -1,0 +1,30 @@
+<div class="bg-primary p-2 text-white" [class.bg-warning]="editing"
+     [class.text-dark]="editing">
+    <h5>{{editing  ? "Изменить" : "Создать"}} Участника</h5>
+</div>
+<form novalidate #form="ngForm" (ngSubmit)="save(form)">
+    <div class="form-group">
+        <label>Пользователь</label>
+        <select class="form-control" name="userId" [(ngModel)]="participant.userId" >
+            <option *ngFor="let u of users" [value]="u.id">{{u.surname}} {{u.name}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Группа</label>
+        <select class="form-control" name="groupId" [(ngModel)]="participant.groupId" >
+            <option *ngFor="let g of groups" [value]="g.id">{{g.name}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Роль</label>
+        <select class="form-control" name="roleId" [(ngModel)]="participant.participantRoleId" >
+            <option *ngFor="let r of roles" [value]="r.id">{{r.name}}</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary" [class.btn-warning]="editing">
+        {{editing ? "Сохранить" : "Создать"}}
+    </button>
+    <button type="reset" class="btn btn-secondary" routerLink="/admin/main/participants">
+        Вернуться
+    </button>
+</form>

@@ -1,0 +1,31 @@
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th class="text-center">№</th>
+            <th class="text-center">Название</th>
+            <th class="text-center"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pr of participantRole; let i = index">
+            <td class="text-center">{{i + 1}}</td>
+            <td class="text-center">{{pr.name}}</td>
+            <td class="text-center">
+                <button class="btn btn-sm btn-success"
+                        [routerLink]="['/admin/main/participantRoles/info', pr.id]">
+                    Подробнее
+                </button>
+                <button class="btn btn-sm btn-warning"
+                        [routerLink]="['/admin/main/participantRoles/edit', pr.id]">
+                    Изменить
+                </button>
+                <button class="btn btn-sm btn-danger" (click)="deleteParticipantRole(pr.id)">
+                    Удалить
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-primary" routerLink="/admin/main/participantRoles/create">
+    Создать новую роль
+</button>

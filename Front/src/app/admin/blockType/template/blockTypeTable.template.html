@@ -1,0 +1,31 @@
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th class="text-center">№</th>
+            <th class="text-center">Название</th>
+            <th class="text-center"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bt of blockType; let i = index">
+            <td class="text-center">{{i + 1}}</td>
+            <td class="text-center">{{bt.name}}</td>
+            <td class="text-center">
+                <button class="btn btn-sm btn-success"
+                        [routerLink]="['/admin/main/blockTypes/info', bt.id]">
+                    Подробнее
+                </button>
+                <button class="btn btn-sm btn-warning"
+                        [routerLink]="['/admin/main/blockTypes/edit', bt.id]">
+                    Изменить
+                </button>
+                <button class="btn btn-sm btn-danger" (click)="deleteBlockType(bt.id)">
+                    Удалить
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-primary" routerLink="/admin/main/blockTypes/create">
+    Создать новый тип
+</button>

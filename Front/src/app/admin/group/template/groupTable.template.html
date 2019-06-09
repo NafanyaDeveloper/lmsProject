@@ -1,0 +1,35 @@
+<table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th class="text-center">№</th>
+                <th class="text-center">Название</th>
+                <th class="text-center">Начало</th>
+                <th class="text-center">Конец</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let g of groups; let i = index">
+                <td class="text-center">{{i + 1}}</td>
+                <td class="text-center">{{g.name}}</td>
+                <td class="text-center">{{g.start | date:"dd/MM/yy"}}</td>
+                <td class="text-center">{{g.finish | date:"dd/MM/yy"}}</td>
+                <td class="text-center">
+                    <button class="btn btn-sm btn-success"
+                             [routerLink]="['/admin/main/groups/info', g.id]">
+                        Подробнее
+                    </button>
+                    <button class="btn btn-sm btn-warning"
+                            [routerLink]="['/admin/main/groups/edit', g.id]">
+                        Изменить
+                    </button>
+                    <button class="btn btn-sm btn-danger" (click)="deleteGroup(g.id)">
+                        Удалить
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" routerLink="/admin/main/groups/create">
+        Создать новую группу
+    </button>

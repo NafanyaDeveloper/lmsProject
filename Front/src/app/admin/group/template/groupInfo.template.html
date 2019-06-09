@@ -1,0 +1,7 @@
+<h2>{{group.name}}({{group.courseName}})</h2>
+<br>
+<h4>{{group.start | date:"dd/MM/yy"}} - {{group.finish | date:"dd/MM/yy"}}</h4>
+<br>
+
+<h3>Список участников</h3>
+<participant-table [groupId]="id"></participant-table>

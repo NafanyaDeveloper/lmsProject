@@ -1,0 +1,31 @@
+<table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th class="text-center">№</th>
+                <th class="text-center">Название</th>
+                <th class="text-center"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ar of administrationRole; let i = index">
+                <td class="text-center">{{i + 1}}</td>
+                <td class="text-center">{{ar.name}}</td>
+                <td class="text-center">
+                    <button class="btn btn-sm btn-success"
+                            [routerLink]="['/admin/main/administrationRoles/info', ar.id]">
+                        Подробнее
+                    </button>
+                    <button class="btn btn-sm btn-warning"
+                            [routerLink]="['/admin/main/administrationRoles/edit', ar.id]">
+                        Изменить
+                    </button>
+                    <button class="btn btn-sm btn-danger" (click)="deleteAdministrationRole(ar.id)">
+                        Удалить
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" routerLink="/admin/main/administrationRoles/create">
+        Создать новую роль
+</button>

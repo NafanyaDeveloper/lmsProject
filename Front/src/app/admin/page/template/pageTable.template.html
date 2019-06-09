@@ -1,0 +1,41 @@
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th class="text-center">№</th>
+            <th class="text-center">Название</th>
+            <th class="text-center">Номер</th>
+            <th class="text-center">Milestone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of pages; let i = index">
+            <td class="text-center">{{i + 1}}</td>
+            <td class="text-center">{{p.name}}</td>
+            <td class="text-center">{{p.number}}</td>
+            <td class="text-center">
+                    <i class="fas fa-times-circle" *ngIf="!p.isMilestone"></i>
+                    <i class="fas fa-check-circle" *ngIf="p.isMilestone"></i>
+            <!--    <fa-icon *ngIf="p.isMilestone" [icon]="faCheckCircle"></fa-icon>
+                    <fa-icon *ngIf="!p.isMilestone" [icon]="faTimesCircle"></fa-icon>-->
+
+            </td>
+            <td class="text-center">
+                <button class="btn btn-sm btn-success"
+                         [routerLink]="['/admin/main/pages/info', p.id]">
+                    Подробнее
+                </button>
+                <button class="btn btn-sm btn-warning"
+                        [routerLink]="['/admin/main/pages/edit', p.id]">
+                    Изменить
+                </button>
+                <button class="btn btn-sm btn-danger" (click)="deletePage(p.id)">
+                    Удалить
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-primary" routerLink="/admin/main/pages/create">
+    Создать новую страницу
+</button> 

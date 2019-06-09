@@ -1,0 +1,67 @@
+<div class="card o-hidden" [@animate]="{value:'*',params:{y:'120px',opacity:'0',delay:'100ms', duration: '400ms'}}">
+    <div class="row">
+      <div class="col-md-6 text-center " style="background-size: cover;background-image: url(./assets/images/photo-long-3.jpg)">
+        <div class="pl-3 auth-right">
+          <div class="auth-logo text-center mt-4">
+            <img src="assets/images/logo.png" alt="">
+          </div>
+          <div class="flex-grow-1"></div>
+          <div class="w-100 mb-4">
+            <button class="btn btn-outline-primary btn-outline-email btn-block btn-icon-text btn-rounded" routerLink="/sessions/signin">
+              <i class="i-Mail-with-At-Sign"></i>
+              Войти по Email
+            </button>
+            <button class="btn btn-outline-primary btn-outline-google btn-block btn-icon-text btn-rounded">
+              <i class="i-Google-Plus"></i>
+              Войти с Google
+            </button>
+            <button class="btn btn-outline-primary btn-outline-facebook btn-block btn-icon-text btn-rounded">
+              <i class="i-Facebook-2"></i>
+              Войти с Facebook
+            </button>
+          </div>
+          <div class="flex-grow-1"></div>
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+        <div class="p-4">
+          
+          <h1 class="mb-3 text-18">Регистрация</h1>
+          <!-- <p class="mb-4 text-muted font-small">Lorem ipsum dolor sit amet.</p> -->
+          <form [formGroup]="signupForm" (ngSubmit)="signup(myForm)" #myForm="ngForm" novalidate>
+              <div class="form-group">
+                  <label for="name">Имя</label>
+                  <input id="name" class="form-control form-control-rounded" formControlName="name" 
+                  type="text" [(ngModel)]="name" required name="name">
+              </div>
+              <div class="form-group">
+                  <label for="surname">Фамилия</label>
+                  <input id="surname" class="form-control form-control-rounded" formControlName="surname" 
+                  type="text" [(ngModel)]="surname" required name="surname">
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" class="form-control form-control-rounded" formControlName="email" 
+                type="email" [(ngModel)]="email" required email name="email">
+              </div>
+              <div class="form-group">
+                <label for="password">Пароль</label>
+                <input id="password" class="form-control form-control-rounded" formControlName="password" 
+                type="password" [(ngModel)]="password" required name="password">
+              </div>
+              <div class="form-group">
+                  <label for="repassword">Повторите пароль</label>
+                  <input id="repassword" class="form-control form-control-rounded" formControlName="repassword" 
+                  type="password" [(ngModel)]="repassword" required name="repassword" pattern="{{myForm.value.password}}">
+              </div>
+              <!-- <button class="btn btn-rounded btn-primary btn-block mt-2">Sign In</button> -->
+              <btn-loading btnClass="btn-primary btn-rounded btn-block mt-3" [loadingText]="loadingText" [loading]="loading"
+              [active]="!myForm.invalid">
+                Войти
+              </btn-loading>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,35 @@
+<table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th class="text-center">№</th>
+                <th class="text-center">ФИО</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">День рождения</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users; let i = index">
+                <td class="text-center">{{i + 1}}</td>
+                <td class="text-center">{{u.surname}} {{u.name}}</td>
+                <td class="text-center">{{u.email}}</td>
+                <td class="text-center">{{u.birth | date:"dd/MM/yy"}}</td>
+                <td class="text-center">
+                    <button class="btn btn-sm btn-success"
+                            [routerLink]="['/admin/main/users/info', u.id]">
+                        Подробнее
+                    </button>
+                    <button class="btn btn-sm btn-warning"
+                            [routerLink]="['/admin/main/users/edit', u.id]">
+                        Изменить
+                    </button>
+                    <button class="btn btn-sm btn-danger" (click)="deleteUser(u.id)">
+                        Удалить
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" routerLink="/admin/main/users/create">
+        Создать нового пользователя
+</button>

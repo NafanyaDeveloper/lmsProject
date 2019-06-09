@@ -1,0 +1,31 @@
+<table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th class="text-center">№</th>
+                <th class="text-center">Текст</th>
+                <th class="text-center"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let q of questions; let i = index">
+                <td class="text-center">{{i + 1}}</td>
+                <td class="text-center">{{q.text}}</td>
+                <td class="text-center">
+                    <button class="btn btn-sm btn-success"
+                            [routerLink]="['/admin/main/questions/info', q.id]">
+                        Подробнее
+                    </button>
+                    <button class="btn btn-sm btn-warning"
+                            [routerLink]="['/admin/main/questions/edit', q.id]">
+                        Изменить
+                    </button>
+                    <button class="btn btn-sm btn-danger" (click)="deleteQuestion(q.id)">
+                        Удалить
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" routerLink="/admin/main/questions/create">
+        Создать новый вопрос
+</button>

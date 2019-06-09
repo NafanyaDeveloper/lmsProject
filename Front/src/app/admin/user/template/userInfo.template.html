@@ -1,0 +1,16 @@
+<h2>{{user.surname}} {{user.name}}</h2>
+<br>
+<h4>Email: {{user.email}}</h4>
+<br>
+<h4>Дата рождения: {{user.birth | date:"dd/MM/yy"}}</h4>
+<br>
+<img src="http://lms.redoctopus.studio{{user.avatar}}" alt="avatar" width="500">
+<br>
+<br>
+<h3>Список администрации</h3>
+<administration-table [userId]="id"></administration-table>
+<br>
+<br>
+
+<h3>Список участников</h3>
+<participant-table [userId]="id"></participant-table>

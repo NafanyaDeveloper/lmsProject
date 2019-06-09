@@ -1,0 +1,16 @@
+<h2>{{course.name}}({{course.directionName}})</h2>
+<br>
+<img src="http://lms.redoctopus.studio{{ course.img }}" alt="course img" width="500">
+<br>
+<br>
+<h4>{{course.description}}</h4>
+<br>
+
+<h3>Список групп</h3>
+<group-table [courseId]="id"></group-table>
+<br>
+<br>
+<br>
+<h3>Список страниц</h3>
+
+<page-table [courseId]="id"></page-table>         

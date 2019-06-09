@@ -1,0 +1,13 @@
+<h3>{{block.name}} - {{block.blockTypeName}} ({{block.pageName}})</h3>
+<br>
+<img *ngIf='block.blockTypeName=="Картинка"' src="https://lms.redoctopus.studio{{block.img}}" alt="Block Img" width="500">
+<h4 *ngIf='block.blockTypeName=="Вебинар с click meeting"'>Ссылка на вебинар: {{block.text}}</h4>
+<h4 *ngIf='block.blockTypeName=="Видео с Youtube"'>Ссылка на видео: {{block.text}}</h4>
+<div *ngIf='block.blockTypeName=="Сообщение"'>
+    <h4>Сообщение:</h4>
+    <p>{{block.text}}</p>
+</div>
+<div *ngIf='block.blockTypeName=="Задание"'>
+    <h3>Список вопросов</h3>
+    <question-table [blockId]="id"></question-table>
+</div>

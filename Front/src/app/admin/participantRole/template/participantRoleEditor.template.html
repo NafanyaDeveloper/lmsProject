@@ -1,0 +1,16 @@
+<div class="bg-primary p-2 text-white" [class.bg-warning]="editing"
+     [class.text-dark]="editing">
+    <h5>{{editing  ? "Изменить" : "Создать"}} Роль</h5>
+</div>
+<form novalidate #form="ngForm" (ngSubmit)="save(form)">
+    <div class="form-group">
+        <label>Название</label>
+        <input class="form-control" name="name" [(ngModel)]="participantRole.name" />
+    </div>
+    <button type="submit" class="btn btn-primary" [class.btn-warning]="editing">
+        {{editing ? "Сохранить" : "Создать"}}
+    </button>
+    <button type="reset" class="btn btn-secondary" routerLink="/admin/main/participantRoles">
+        Вернуться
+    </button>
+</form>

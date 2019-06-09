@@ -1,0 +1,26 @@
+<div class="bg-primary p-2 text-white" [class.bg-warning]="editing"
+     [class.text-dark]="editing">
+    <h5>{{editing  ? "Изменить" : "Создать"}} Направление</h5>
+</div>
+<form novalidate #form="ngForm" (ngSubmit)="save(form)">
+    <div class="form-group">
+        <label>Название</label>
+        <input class="form-control" name="name" [(ngModel)]="direction.name" />
+    </div>
+    <div class="form-group">
+        <label>Описание</label>
+        <textarea class="form-control" name="description"
+                  [(ngModel)]="direction.description">
+        </textarea>
+    </div>
+    <div class="form-group">
+        <label>Изображение</label>
+        <input class="form-control" type="file" (change)="imgLoaded($event)" />
+    </div>
+    <button type="submit" class="btn btn-primary" [class.btn-warning]="editing">
+        {{editing ? "Сохранить" : "Создать"}}
+    </button>
+    <button type="reset" class="btn btn-secondary" routerLink="/admin/main/directions">
+        Вернуться
+    </button>
+</form>

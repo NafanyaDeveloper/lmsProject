@@ -1,0 +1,14 @@
+<h2>{{direction.name}}</h2>
+<br>
+<img src="http://lms.redoctopus.studio{{ direction.img }}" alt="direction img" width="500">
+<br>
+<br>
+<h4>{{direction.description}}</h4>
+<br>
+
+<h3>Список курсов</h3>
+<course-table [directionId]="id"></course-table>
+<br>
+<br>
+<h3>Список администрации</h3>
+<administration-table [directionId]="id"></administration-table>

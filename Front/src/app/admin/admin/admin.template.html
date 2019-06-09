@@ -1,0 +1,79 @@
+<div class="container-fluid">
+        <div class="row">
+            <div class="col bg-dark text-white">
+                <a class="navbar-brand">ADMIN</a>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-3">
+                <button class="btn btn-outline-info btn-block"
+                        routerLink="/admin/main/directions"
+                        routerLinkActive="active">
+                    Направления
+                </button>
+                <button class="btn btn-outline-info btn-block"
+                        routerLink="/admin/main/courses"
+                        routerLinkActive="active">
+                    Курсы
+                </button>
+                <button class="btn btn-outline-info btn-block"
+                        routerLink="/admin/main/users"
+                        routerLinkActive="active">
+                    Пользователи
+                </button>
+                <button class="btn btn-outline-info btn-block"
+                        routerLink="/admin/main/groups"
+                        routerLinkActive="active">
+                    Группы
+                </button>
+                <button class="btn btn-outline-info btn-block"
+                        routerLink="/admin/main/pages"
+                        routerLinkActive="active">
+                    Страницы
+                </button>
+                <button class="btn btn-outline-info btn-block"
+                        routerLink="/admin/main/administrationRoles"
+                        routerLinkActive="active">
+                    Роли администрации
+                </button>
+                <button class="btn btn-outline-info btn-block"
+                        routerLink="/admin/main/administrations"
+                        routerLinkActive="active">
+                    Администрация
+                </button>
+                <button class="btn btn-outline-info btn-block"
+                        routerLink="/admin/main/participantRoles"
+                        routerLinkActive="active">
+                    Роли участников
+                </button>
+                <button class="btn btn-outline-info btn-block"
+                        routerLink="/admin/main/participants"
+                        routerLinkActive="active">
+                    Участники
+                </button>
+                <button class="btn btn-outline-info btn-block"
+                        routerLink="/admin/main/blockTypes"
+                        routerLinkActive="active">
+                    Типы блока
+                </button>
+                <button class="btn btn-outline-info btn-block"
+                        routerLink="/admin/main/blocks"
+                        routerLinkActive="active">
+                    Блоки
+                </button>
+                <button class="btn btn-outline-info btn-block"
+                        routerLink="/admin/main/questions"
+                        routerLinkActive="active">
+                    Вопросы
+                </button>
+                <button class="btn btn-outline-info btn-block"
+                        routerLink="/admin/main/answers"
+                        routerLinkActive="active">
+                    Ответы
+                </button>
+            </div>
+            <div class="col-9">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>

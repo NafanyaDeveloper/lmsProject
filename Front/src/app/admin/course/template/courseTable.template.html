@@ -1,0 +1,33 @@
+<table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th class="text-center">№</th>
+                <th class="text-center">Название</th>
+                <th class="text-center">Описание</th>
+                <th class="text-center"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of courses; let i = index">
+                <td class="text-center">{{i + 1}}</td>
+                <td class="text-center">{{c.name}}</td>
+                <td class="text-center">{{c.description}}</td>
+                <td class="text-center">
+                    <button class="btn btn-sm btn-success"
+                            [routerLink]="['/admin/main/courses/info', c.id]">
+                        Подробнее
+                    </button>
+                    <button class="btn btn-sm btn-warning"
+                            [routerLink]="['/admin/main/courses/edit', c.id]">
+                        Изменить
+                    </button>
+                    <button class="btn btn-sm btn-danger" (click)="deleteCourse(c.id)">
+                        Удалить
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" routerLink="/admin/main/courses/create">
+        Создать новый курс
+</button>

@@ -1,0 +1,35 @@
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th class="text-center">№</th>
+            <th class="text-center">Id пользователя</th>
+            <th class="text-center">Id группы</th>
+            <th class="text-center">Id роли</th>
+            <th class="text-center"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of participant; let i = index">
+            <td class="text-center">{{i + 1}}</td>
+            <td class="text-center">{{p.userId}}</td>
+            <td class="text-center">{{p.groupId}}</td>
+            <td class="text-center">{{p.participantRoleId}}</td>
+            <td class="text-center">
+                <button class="btn btn-sm btn-success"
+                        [routerLink]="['/admin/main/participants/info', p.userId, p.groupId]">
+                    Подробнее
+                </button>
+                <button class="btn btn-sm btn-warning"
+                        [routerLink]="['/admin/main/participants/edit', p.userId, p.groupId]">
+                    Изменить
+                </button>
+                <button class="btn btn-sm btn-danger" (click)="deleteParticipant(p.userId, p.groupId)">
+                    Удалить
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-primary" routerLink="/admin/main/participants/create">
+    Создать нового участника
+</button>

@@ -1,0 +1,112 @@
+<div class="module-loader" *ngIf="loading">
+    <div class="spinner spinner-bubble spinner-bubble-primary mr-3"></div>
+</div>
+<div *ngIf="!loading">
+    <div class="breadcrumb">
+        <h1>{{course.name}}</h1>
+        <ul>
+            <li><a href="">{{course.directionName}}</a></li>
+            <li>{{course.name}}</li>
+        </ul>
+    </div>
+    <div class="separator-breadcrumb border-top"></div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="card bg-dark text-white o-hidden mb-4">
+                <img class="card-img" src="https://lms.redoctopus.studio/{{course.img}}" alt="Card image" height="450px">
+                <div class="card-img-overlay">
+                    <div class="text-center pt-4">
+                        <h5 class="card-title mb-2 text-white">{{course.name}}</h5>
+                        <div class="separator border-top mb-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <div class="row">
+                    <div class="col-md-12">
+                            <div class="card mb-4">
+                                <ngb-tabset>
+                                    <ngb-tab title="О курсе">
+                                        <ng-template ngbTabContent>
+                                            <p>{{course.description}}</p>
+                                        </ng-template>
+                                    </ngb-tab>
+                                    <ngb-tab>
+                                        <ng-template ngbTabTitle>Что вы получитe</ng-template>
+                                        <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee
+                                            squid.
+                                            <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+                                                farm-to-table
+                                                craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+                                                vinyl
+                                                cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
+                                                salvia
+                                                yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable
+                                                jean
+                                                shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher
+                                                vero
+                                                sint qui sapiente accusamus tattooed echo park.</p>
+                                        </ng-template>
+                                    </ngb-tab>
+                                </ngb-tabset>
+                            </div>
+                        </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-profile-1 mb-4">
+                            <div class="card-body text-center">
+                                <div class="avatar box-shadow-2 mb-3">
+                                    <img src="./assets/images/faces/16.jpg" alt="">
+                                </div>
+                                <h5 class="m-0">Вася Пупок</h5>
+                                <p class="mt-0 text-muted">Teamleader</p>
+                                <p>По какой-то счастливой случайности стал тимлидом</p>
+                                <button class="btn btn-primary btn-rounded">Связаться</button>
+                                <div class="card-socials-simple mt-4">
+                                    <a href="">
+                                        <i class="i-Linkedin-2"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="i-Facebook-2"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="i-Twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-profile-1 mb-4">
+                            <div class="card-body text-center">
+                                <div class="avatar box-shadow-2 mb-3">
+                                    <img src="./assets/images/faces/2.jpg" alt="">
+                                </div>
+                                <h5 class="m-0">Сантехник Коля</h5>
+                                <p class="mt-0 text-muted">Сантехник</p>
+                                <p>Пришел по вызову. В душе не понимает, что он делает в программировании! </p>
+                                <button class="btn btn-primary btn-rounded">Связаться</button>
+                                <div class="card-socials-simple mt-4">
+                                    <a href="">
+                                        <i class="i-Linkedin-2"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="i-Facebook-2"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="i-Twitter"></i>
+                                   </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

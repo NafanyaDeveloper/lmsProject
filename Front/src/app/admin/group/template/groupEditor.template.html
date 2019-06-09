@@ -1,0 +1,32 @@
+<div class="bg-primary p-2 text-white" [class.bg-warning]="editing"
+     [class.text-dark]="editing">
+    <h5>{{editing  ? "Изменить" : "Создать"}} Группу</h5>
+</div>
+<form novalidate #form="ngForm" (ngSubmit)="save(form)">
+    <div class="form-group">
+        <label>Название</label>
+        <input class="form-control" name="name" [(ngModel)]="group.name" />
+    </div>
+    <div class="form-group">
+        <label>Курс</label>
+        <select class="form-control" name="courseId" [(ngModel)]="group.courseId" >
+            <option *ngFor="let c of courses" [value]="c.id">{{c.name}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+            <label>Начало</label>
+            <input class="form-control" type="date" name="start" [ngModel]="group.start | date:'yyyy-MM-dd'" 
+            (ngModelChange)="group.start = $event" />
+    </div>
+    <div class="form-group">
+            <label>Конец</label>
+            <input class="form-control" type="date" name="finish" [ngModel]="group.finish | date:'yyyy-MM-dd'" 
+            (ngModelChange)="group.finish = $event" />
+    </div>
+    <button type="submit" class="btn btn-primary" [class.btn-warning]="editing">
+        {{editing ? "Сохранить" : "Создать"}}
+    </button>
+    <button type="reset" class="btn btn-secondary" routerLink="/admin/main/groups">
+        Вернуться
+    </button>
+</form>
